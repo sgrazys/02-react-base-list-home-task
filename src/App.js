@@ -4,7 +4,7 @@ import './App.css';
 
 function App() {
 
-	const dogs = ['šuo', 'šunius', 'Bobikas', 'kudlius', 'Šarikas', 'avigalvis'];
+	const dogs = ['šuo', 'šunius', 'Bobikas', 'kudlius', 'Šarikas', 'aviganis'];
 
 	return (
 		<div className='App'>
@@ -14,7 +14,9 @@ function App() {
 			</ul>
 
 			<ul>
-				{[...dogs].sort((a, b) => a.length - b.length).map((e, i) => <li className={`list ${i % 2 !== 0 && 'circle'}`} key={Math.random()}>{e}</li>)}
+				{/* {[...dogs].sort((a, b) => a.length - b.length).filter(e => e[0] !== e[0].toUpperCase()).map((e, i) => <li className={`list ${i % 2 !== 0 && 'circle'}`} key={Math.random()}>{e}</li>)} */}
+
+				{[...dogs].map((e, i) => <li className={`list ${i % 2 !== 0 && 'circle'} ${e.length > 6 ? 'green' : 'red'}`} key={Math.random()}>{e.length}</li>)}
 			</ul>
 
 		</div>
